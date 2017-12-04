@@ -1,0 +1,276 @@
+{
+	"auth": {
+		"customId": "auth",
+		"queryName": "Autenticar",
+		"screen": "",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "User",
+		"entityFullName": "app.entity.User",
+		"query": "select o from User o where o.login = :login",
+		"queryParamsValues": [
+			{
+				"fieldName": "login",
+				"fieldValue": ""
+			}
+		],
+		"verbs": {
+			"GET": false,
+			"GETAuthorities": null,
+			"POST": false,
+			"POSTAuthorities": null,
+			"PUT": false,
+			"PUTAuthorities": null,
+			"DELETE": false,
+			"DELETEAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": null,
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"security": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/auth/"
+	},
+	"roles": {
+		"customId": "roles",
+		"queryName": "Obter Autorização",
+		"screen": "",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "Role",
+		"entityFullName": "app.entity.Role",
+		"query": "select o.id from Role o where o.user.login = :login",
+		"queryParamsValues": [
+			{
+				"fieldName": "login",
+				"fieldValue": ""
+			}
+		],
+		"verbs": {
+			"GET": false,
+			"GETAuthorities": null,
+			"POST": false,
+			"POSTAuthorities": null,
+			"PUT": false,
+			"PUTAuthorities": null,
+			"DELETE": false,
+			"DELETEAuthorities": null,
+			"FILTER": true,
+			"FILTERAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": null,
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"user": null
+		},
+		"security": {
+			"id": null,
+			"user": null
+		},
+		"calcFields": {},
+		"calcFieldsSecurity": {},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/roles/"
+	},
+	"tenant": {
+		"customId": "tenant",
+		"queryName": "Obter Id de Multi-inquilino",
+		"screen": "",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "User",
+		"entityFullName": "app.entity.User",
+		"query": "select u.company.id from User u where u.login = :login",
+		"queryParamsValues": [
+			{
+				"fieldName": "login",
+				"fieldValue": ""
+			}
+		],
+		"verbs": {
+			"GET": false,
+			"GETAuthorities": null,
+			"POST": false,
+			"POSTAuthorities": null,
+			"PUT": false,
+			"PUTAuthorities": null,
+			"DELETE": false,
+			"DELETEAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": null,
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"security": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/tenant/"
+	},
+	"1jyg2tod6al9v": {
+		"customId": "dados",
+		"queryName": "dados",
+		"screen": "src/main/webapp/views/logged/dados.view.html",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "Dados",
+		"entityFullName": "app.entity.Dados",
+		"query": {
+			"isValid": true,
+			"isEmpty": false,
+			"operationType": "object",
+			"multiTenant": true,
+			"type": "select",
+			"rulesEntity": [
+				{
+					"entity": "Dados",
+					"namespace": "app.entity.Dados",
+					"alias": "d"
+				}
+			],
+			"rulesSelect": [
+				{
+					"func": "get",
+					"field": "d",
+					"type": "string"
+				}
+			],
+			"rulesGroupBy": [],
+			"rulesHaving": [],
+			"rulesOrderBy": [],
+			"rules": {
+				"condition": "AND",
+				"rules": [],
+				"not": false,
+				"valid": true
+			}
+		},
+		"queryParamsValues": [],
+		"verbs": {
+			"GET": true,
+			"GETAuthorities": null,
+			"POST": true,
+			"POSTAuthorities": null,
+			"PUT": true,
+			"PUTAuthorities": null,
+			"DELETE": true,
+			"DELETEAuthorities": null,
+			"FILTER": true,
+			"FILTERAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": {
+				"blocklyClass": "blockly.Bloco",
+				"blocklyMethod": "Executar",
+				"blocklyLanguage": "java",
+				"blocklyJson": {
+					"namespace": "blockly.Bloco",
+					"classNameNew": "Bloco",
+					"classNameOld": "Bloco",
+					"sourcePath": "src/main/java/blockly/Bloco.blockly",
+					"language": "java",
+					"class": "blockly.Bloco",
+					"methods": [
+						{
+							"name": "Executar",
+							"hasReturn": "true",
+							"params": [
+								"Entidade<app.entity.Dados>"
+							]
+						}
+					]
+				},
+				"blocklyFunctionCall": "cronapi.util.makeCallServerBlocklyAsync('blockly.Bloco:Executar', null, null)"
+			},
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"nome": null,
+			"sobrenome": null,
+			"idade": null
+		},
+		"security": {
+			"id": null,
+			"nome": null,
+			"sobrenome": null,
+			"idade": null
+		},
+		"calcFields": {},
+		"calcFieldsSecurity": {},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/1jyg2tod6al9v/"
+	}
+}
